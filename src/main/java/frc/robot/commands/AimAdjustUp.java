@@ -4,23 +4,16 @@
 
 package frc.robot.commands;
 
-import frc.robot.subsystems.ExampleSubsystem;
 import edu.wpi.first.wpilibj2.command.CommandBase;
+import frc.robot.subsystems.ShooterSubsystem;
 
-/** An example command that uses an example subsystem. */
-public class ExampleCommand extends CommandBase {
-  @SuppressWarnings({"PMD.UnusedPrivateField", "PMD.SingularField"})
-  private final ExampleSubsystem m_subsystem;
-
-  /**
-   * Creates a new ExampleCommand.
-   *
-   * @param subsystem The subsystem used by this command.
-   */
-  public ExampleCommand(ExampleSubsystem subsystem) {
-    m_subsystem = subsystem;
+public class AimAdjustUp extends CommandBase {
+  /** Creates a new AimAdjustUp. */
+  public final ShooterSubsystem ShooterSubsystem;
+  public AimAdjustUp(ShooterSubsystem s_ShooterSubsystem) {
+    ShooterSubsystem = s_ShooterSubsystem;
+    addRequirements(s_ShooterSubsystem);
     // Use addRequirements() here to declare subsystem dependencies.
-    addRequirements(subsystem);
   }
 
   // Called when the command is initially scheduled.
@@ -29,11 +22,15 @@ public class ExampleCommand extends CommandBase {
 
   // Called every time the scheduler runs while the command is scheduled.
   @Override
-  public void execute() {}
+  public void execute() {
+    ShooterSubsystem.ShooterAimUp();
+  }
 
   // Called once the command ends or is interrupted.
   @Override
-  public void end(boolean interrupted) {}
+  public void end(boolean interrupted) {
+    ShooterSubsystem.ShooterAimStop();
+  }
 
   // Returns true when the command should end.
   @Override
