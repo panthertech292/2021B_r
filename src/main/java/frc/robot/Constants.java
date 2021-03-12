@@ -17,12 +17,14 @@ public final class Constants {
     static final int kOperController = 1; // USB
     static final int kDriverController = 0; // USB
 
+
+
     public static final class DriveConstants {
         //Motor Mapping
-        public static final int kFrontLeftMotor = 20;
-        public static final int kBackLeftMotor = 1;
-        public static final int kFrontRightMotor = 15;
-        public static final int kBackRightMotor = 14;
+        public static final int kFrontLeftMotor = 2;
+        public static final int kBackLeftMotor = 4;
+        public static final int kFrontRightMotor = 1;
+        public static final int kBackRightMotor = 3;
         //Auto Move Constants
         public static final double kAutoForwardEncoderDistance = 144; //inches!
         public static final double kAutoBackwardEncoderDistance = 144; 
@@ -40,8 +42,8 @@ public final class Constants {
 
     public static final class ShooterConstants {
         //Motor Mapping
-        public static final int kShooterMotor = 13;
-        public static final int kAimMotor = 7; 
+        public static final int kShooterMotor = 11;
+        public static final int kAimMotor = 12; //AKA hood
         //Encoder Constants
         public static final int kShooterEncoderChannel1 = 0; //Placeholder value DIO
         public static final int kShooterEncoderChannel2 = 1; //Placeholder value DIO
@@ -57,9 +59,9 @@ public final class Constants {
     }
     public static final class BeltConstants{
         //Talon Mapping
-        public static final int kFrontBeltMotor = 9; //Placeholder
-        public static final int kBackBeltMotor = 2; //Placeholder
-        public static final int kBottomBeltMotor = 77; //Placeholder
+        public static final int kFrontBeltMotor = 21; //21
+        public static final int kBackBeltMotor = 22;  //22
+        public static final int kBottomBeltMotor = 23; //23
 
         public static final double kBeltForwardSpeed = -.65; //Placeholder
         public static final double kBeltBackwardSpeed = .2; //Placeholder

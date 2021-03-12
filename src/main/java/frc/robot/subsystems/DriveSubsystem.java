@@ -158,7 +158,7 @@ public class DriveSubsystem extends SubsystemBase {
   }
 
   public void updateLimeLight() {
-
+    
     v_limeLightX = v_TableEntrytx.getDouble(0.0);
     v_limeLightY = v_TableEntryty.getDouble(0.0);
     v_limeLightArea = v_TableEntryta.getDouble(0.0);
@@ -475,8 +475,9 @@ public class DriveSubsystem extends SubsystemBase {
   }
 
   public double AnglePID(double v_targetAngle, double v_rightSpeedBase) {
+    
     double error;
-    double P = 0.0256 * 0.5 * 0.5 * 0.4 * 2 * 2;
+    double P = 0.0256 * 0.5 * 0.5 * 0.4 * 2 * 2 * 2 * 1.35;
     double I = 0.0;// 0.00812;
     double D = 0.0;
     double derivative;
@@ -493,6 +494,7 @@ public class DriveSubsystem extends SubsystemBase {
     if (error > 0) {
       v_rightSpeed = v_rightSpeedBase + rcw;
     }
+    SmartDashboard.putNumber("Error Drive Straight", error);
    // System.out.println(v_rightSpeed);
     return v_rightSpeed;
   }
@@ -525,6 +527,7 @@ public class DriveSubsystem extends SubsystemBase {
   public void timedPrintOut(){
     if(v_printCount % 100 == 0){
     //Enter print statements here!  
+    
     }
     v_printCount = v_printCount + 1;
   }
@@ -541,6 +544,8 @@ public class DriveSubsystem extends SubsystemBase {
 
     updateLimeLight();
     timedPrintOut();
-      SmartDashboard.putNumber("LimelightX", v_limeLightX);
+    SmartDashboard.putNumber("LimelightX", v_limeLightX);
+    
+    
   }
 }

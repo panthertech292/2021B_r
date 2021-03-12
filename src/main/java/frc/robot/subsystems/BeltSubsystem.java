@@ -73,9 +73,9 @@ public class BeltSubsystem extends SubsystemBase {
 
   @Override
   public void periodic() {
-    //SetBelts();
-    //System.out.println(v_backBeltSpeed);
-    BackBeltMotor.set(0.5);
     // This method will be called once per scheduler run
+    //SetBelts();
+
+    
   }
 }
